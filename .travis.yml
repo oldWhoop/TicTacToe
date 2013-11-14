@@ -1,2 +1,9 @@
 language: java
 jdk: openjdk7
+deploy:
+  provider: heroku
+  api_key:
+    secure: s8NDYP7zLsJjrrIT/4ibhtyDYSwMT9O2fmlmM23V01Lq13+EOKFMG1Ge6HogeO+NWbLERpcrvzCSaK2HGA7Uhmjy8AnylMywSzI/bsfHiT1rRCpMD5tLiQrOID2sq5wqDy5lN7D7y6y9dx0Pv7+k6wI/ZGsjDkR9w3sYOQwwsrg=
+  app: tictacwhoop
+  on:
+    repo: oldWhoop/TicTacToe

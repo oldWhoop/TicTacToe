@@ -1,0 +1,4 @@
+echo -e '\033[0;37mRunning...'
+export PORT=4567
+java -jar target/TicTacToe-1.0-SNAPSHOT-jar-with-dependencies.jar
+echo -e '\033[00m'

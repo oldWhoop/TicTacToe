@@ -1,0 +1,4 @@
+echo -e '\033[0;37mTesting...'
+sleep 1
+mvn test -q
+echo -e '\033[00m'

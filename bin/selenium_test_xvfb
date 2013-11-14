@@ -1,0 +1,5 @@
+sudo bin/xvfb start
+ export DISPLAY=:99
+ export STAGING_SERVER="http://hapworldtwo.herokuapp.com/"
+ mvn test-compile failsafe:integration-test 
+ sudo bin/xvfb stop

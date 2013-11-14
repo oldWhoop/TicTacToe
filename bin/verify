@@ -1,0 +1,3 @@
+echo -e '\033[0;37mVerifying...'
+mvn verify
+echo -e '\033[00m'

@@ -1,0 +1,3 @@
+export STAGING_SERVER='http://localhost:4567'
+mvn test-compile 
+ mvn failsafe:integration-test

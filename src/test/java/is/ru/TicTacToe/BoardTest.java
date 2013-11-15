@@ -10,7 +10,6 @@ public class BoardTest {
 
     @Test
     public void testBoardArray() {
-    	int counter = 0;
     	for (int i = 0; i < 9; i++) {
     		assertEquals(0, b.get(i));
     	}

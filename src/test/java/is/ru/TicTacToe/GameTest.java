@@ -6,11 +6,13 @@ import org.junit.Test;
 
 
 public class GameTest {
-	Game g = new Game();
+	int dim = 3;
+	int dsq = dim*dim;
+	Game g = new Game(dim);
 
 	@Test
 	public void testGameBoard() {
-    	for (int i = 0; i < 9; i++) {
+    	for (int i = 0; i < dsq; i++) {
     		assertEquals(0, g.gameBoard.get(i));
     	}
     	assertEquals(0, g.getRound());
@@ -47,7 +49,7 @@ public class GameTest {
 
 	@Test
 	public void testNewRound() {
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < dsq; i++) {
 			g.mark(i);
 		}
 		g.newRound();
@@ -56,7 +58,7 @@ public class GameTest {
 
 	@Test
 	public void testMaxRound() {
-		for(int i = 0; i < 9; i++) {
+		for(int i = 0; i < dsq; i++) {
 			g.mark(i);
 		}
 		assertEquals(0, g.getRound());

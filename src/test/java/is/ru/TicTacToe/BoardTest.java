@@ -6,11 +6,12 @@ import org.junit.Test;
 
 
 public class BoardTest {
-	Board b = new Board();
+	int dim = 3;
+	Board b = new Board(dim);
 
     @Test
     public void testBoardArray() {
-    	for (int i = 0; i < 9; i++) {
+    	for (int i = 0; i < dim*dim; i++) {
     		assertEquals(0, b.get(i));
     	}
     }

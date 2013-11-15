@@ -38,8 +38,15 @@ public class Game {
 	}
 
 	// Mark square for player
-	public void mark(int n, int val) {
-		gameBoard.set(n, val);
-		nextRound();
+	public void mark(int n) {
+		if (gameBoard.get(n) == 0) {
+			gameBoard.set(n, player);
+			nextRound();
+		}
+		
 	}
+
+
+	
+
 }

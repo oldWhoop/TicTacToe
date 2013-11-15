@@ -45,7 +45,7 @@
               <!-- Explicity state the mainclass; Avoid having to run 
               'java -jar xxx.java nameOfMainClass'  and just run
               'java -jar xxx.java' -->
-              <mainClass>is.ru.TicTacToe</mainClass>
+              <mainClass>is.ru.TicTacToe.TicTacToe</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>

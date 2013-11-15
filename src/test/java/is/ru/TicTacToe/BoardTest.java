@@ -24,5 +24,13 @@ public class BoardTest {
     	assertEquals(val, b.get(n));
     }
 
+    @Test
+    public void testClearBoard() {
+    	b.set(3, 4);
+    	b.clearBoard();
+    	testBoardArray();
+    }
+
+
 
 }

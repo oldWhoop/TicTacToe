@@ -7,11 +7,13 @@ public class Board {
 
 	public Board() {
 		gameBoard = new int[9];
-		clearBoard();
+		Arrays.fill(gameBoard, 0);
 	}
 
-	private void clearBoard() {
-		Arrays.fill(gameBoard, 0);
+	public void clearBoard() {
+		for (int i = 0; i < gameBoard.length; i++) {
+			this.set(i, 0);
+		}
 	}
 
 	public int get(int arrI) {

@@ -7,8 +7,8 @@ public class Game {
 	public Board gameBoard;
 	private int round = 0;
 	private int player = 1;
-	private int dim;
-	private int dimsq;
+	private int dim;	// Dimension of gameboard
+	private int dimsq;	// Dimension squared
 
 	// Constructor
 	public Game(int dimension) {
@@ -24,6 +24,7 @@ public class Game {
 	// New round, clears the board
 	public void newRound() {
 		round = 0;
+		player = 1;
 		gameBoard.clearBoard();
 	}
 
@@ -45,48 +46,68 @@ public class Game {
 	public void mark(int n) {
 		if (gameBoard.get(n) == 0) {
 			gameBoard.set(n, player);
-			nextRound();
 		}
 		
 	}
 
 	public int isWinner(int n) {
 		int result = 0;
+		if (horizontalWin(n) || verticalWin(n) || diagonalWin(n)) {
+			return player;
+		}
+		if (round == dimsq - 1) {
+			// Tie!
+			return 3;		// 3 means tie.
+		}
+		return 0;
+	}
+
+	public boolean horizontalWin(int n) {
+		// Test for horizontal win
 		int count = 0;
-		// Test for horizontal row
-		int start = n - n%dim;
-		int end = start + dim;
-		for (; start < end; start++) {
-			if (gameBoard.get(start) == getPlayer()) {
+		int i = n - n%dim;
+		int end = i + dim;
+		for (; i < end; i++) {
+			if (gameBoard.get(i) == getPlayer()) {
 				count++;
 			}
 		}
 		if (count == dim) {
-			return player;
+			return true;
 		}
-		count = 0;
+		return false;
+	}
 
+	public boolean verticalWin(int n) {
 		// Test for vertical row
-		start = (int)Math.floor(n/dim);
+		int count = 0;
+		int start = n;
+		// We need to determine the starting point for the loop
+		while (start >= dim) {
+			start -= dim;
+		}
 		for (; start < dimsq; start += dim) {
 			if (gameBoard.get(start) == getPlayer()) {
 				count++;
 			}
 		}
 		if (count == dim) {
-			return player;
+			return true;
 		}
-		count = 0;
+		return false;
+	}
 
+	public boolean diagonalWin(int n) {
 		// Since we're lazy programmers, we always try and find diagonal rows
 		// From the left corner down
+		int count = 0;
 		for (int i = 0; i < dimsq; i += dim+1) {
 			if (gameBoard.get(i) == getPlayer()) {
 				count++;
 			}
 		}
 		if (count == dim) {
-			return player;
+			return true;
 		}
 		count = 0;
 		// From the right corner down
@@ -96,13 +117,9 @@ public class Game {
 			}
 		}
 		if (count == dim) {
-			return player;
+			return true;
 		}
-		if (round == dimsq) {
-			// Tie!
-			return 3;		// 3 means tie.
-		}
-		return 0;
+		return false;
 	}
 
 }

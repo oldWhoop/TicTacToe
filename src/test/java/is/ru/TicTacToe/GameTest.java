@@ -71,8 +71,9 @@ public class GameTest {
 
 	@Test
 	public void testMaxRound() {
+
 		for(int i = 0; i < dsq; i++) {
-			g.mark(i);
+			g.nextRound();
 		}
 		assertEquals(0, g.getRound());
 		assertEquals(1, g.getPlayer());
@@ -136,12 +137,25 @@ public class GameTest {
 	}
 
 	@Test
-	public void testIsTie () {
+	public void testIsTie() {
 		g.mark(1);
 		for (int i = 0; i < dsq - 1; i++) {
 			g.nextRound();
 		}
 		assertEquals(3, g.isWinner(8));
 	}
+
+	@Test
+	public void testOneTurn() {
+		int r = 0;
+		for (int i = 0; i < dsq; i++) {
+			r = g.oneTurn(i);
+		}
+		assertEquals(1, r);
+		assertEquals(0, g.getRound());
+		assertEquals(0, g.gameBoard.get(4));
+	}
+
+
 
 }

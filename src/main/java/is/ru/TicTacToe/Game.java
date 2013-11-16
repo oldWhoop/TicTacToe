@@ -17,6 +17,17 @@ public class Game {
 		dimsq = dimension*dimension;
 	}
 
+	public int oneTurn(int n) {
+		int winner = 0;
+		mark(n);
+		// No need to check for winners unless there have been enough rounds
+		if(getRound() > (2*dim - 2)) {
+			winner = isWinner(n);
+		}
+		nextRound();
+		return winner;
+	}
+
 	public int getRound() {
 		return round;
 	}
@@ -33,6 +44,7 @@ public class Game {
 		round++;
 		if (round == dimsq) {
 			round = 0;
+			gameBoard.clearBoard();
 		}
 		player = round%2 + 1;
 	}
@@ -59,7 +71,7 @@ public class Game {
 			// Tie!
 			return 3;		// 3 means tie.
 		}
-		return 0;
+		return 0;	// No winner
 	}
 
 	public boolean horizontalWin(int n) {
@@ -98,7 +110,7 @@ public class Game {
 	}
 
 	public boolean diagonalWin(int n) {
-		// Since we're lazy programmers, we always try and find diagonal rows
+		// Find diagonal wins
 		// From the left corner down
 		int count = 0;
 		for (int i = 0; i < dimsq; i += dim+1) {

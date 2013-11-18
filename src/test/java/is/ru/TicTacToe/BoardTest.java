@@ -6,7 +6,7 @@ import org.junit.Test;
 
 
 public class BoardTest {
-	int dim = 3;
+	int dim = 5;
 	Board b = new Board(dim);
 
     @Test

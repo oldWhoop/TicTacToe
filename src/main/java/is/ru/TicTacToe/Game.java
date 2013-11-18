@@ -7,6 +7,7 @@ public class Game {
 	public Board gameBoard;
 	private int round = 0;
 	private int player = 1;
+	private int[] playerWins;
 	private int dim;	// Dimension of gameboard
 	private int dimsq;	// Dimension squared
 
@@ -15,16 +16,18 @@ public class Game {
 		gameBoard = new Board(dimension);
 		dim = dimension;
 		dimsq = dimension*dimension;
+		playerWins = new int[] {0, 0};
 	}
 
 	public int oneTurn(int n) {
 		int winner = 0;
-		mark(n);
-		// No need to check for winners unless there have been enough rounds
-		if(getRound() > (2*dim - 2)) {
+		if (mark(n)) {
+			// No need to check for winners unless there have been enough rounds
+			if(getRound() > (2*dim - 2)) {
 			winner = isWinner(n);
-		}
-		nextRound();
+			}
+			nextRound();
+		}		
 		return winner;
 	}
 
@@ -43,10 +46,11 @@ public class Game {
 	public void nextRound() {
 		round++;
 		if (round == dimsq) {
-			round = 0;
-			gameBoard.clearBoard();
+			newRound();
 		}
-		player = round%2 + 1;
+		else {
+			player = round%2 + 1;
+		}	
 	}
 
 	// Get player number
@@ -55,11 +59,12 @@ public class Game {
 	}
 
 	// Mark square for player
-	public void mark(int n) {
+	public boolean mark(int n) {
 		if (gameBoard.get(n) == 0) {
 			gameBoard.set(n, player);
+			return true;
 		}
-		
+		return false;
 	}
 
 	public int isWinner(int n) {
@@ -85,6 +90,7 @@ public class Game {
 			}
 		}
 		if (count == dim) {
+			addWin();
 			return true;
 		}
 		return false;
@@ -104,6 +110,7 @@ public class Game {
 			}
 		}
 		if (count == dim) {
+			addWin();
 			return true;
 		}
 		return false;
@@ -119,6 +126,7 @@ public class Game {
 			}
 		}
 		if (count == dim) {
+			addWin();
 			return true;
 		}
 		count = 0;
@@ -129,9 +137,14 @@ public class Game {
 			}
 		}
 		if (count == dim) {
+			addWin();
 			return true;
 		}
 		return false;
+	}
+
+	public void addWin() {
+		playerWins[player-1]++;
 	}
 
 }

@@ -5,6 +5,11 @@ public class Board {
 
 	private int[] gameBoard;
 
+	public Board() {
+		gameBoard = new int[9];
+		Arrays.fill(gameBoard, 0);
+	}
+	
 	public Board(int dimension) {
 		gameBoard = new int[dimension*dimension];
 		Arrays.fill(gameBoard, 0);

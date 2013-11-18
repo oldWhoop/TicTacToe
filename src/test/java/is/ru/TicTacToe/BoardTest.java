@@ -6,12 +6,21 @@ import org.junit.Test;
 
 
 public class BoardTest {
-	int dim = 5;
-	Board b = new Board(dim);
+	Board b = new Board();
+
+	@Test
+    public void testGetDim() {
+    	assertEquals(3, b.getDim());
+    }
+
+    @Test
+    public void testGetDSQ() {
+    	assertEquals(9, b.getDSQ());
+    }
 
     @Test
     public void testBoardArray() {
-    	for (int i = 0; i < dim*dim; i++) {
+    	for (int i = 0; i < b.getDSQ(); i++) {
     		assertEquals(0, b.get(i));
     	}
     }

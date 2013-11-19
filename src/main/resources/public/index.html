@@ -23,34 +23,76 @@
           <input type="text" class="form-control" name="b" id="b" placeholder="Tala 2">
         </div>
         <button type="submit" class="btn btn-default">Sign in</button>
-      </form>
+
       <hr>
       <div id="results">
       </div>
     </div>
+    <div>
+      <table>
+        <tr>
+          <td id="td_1"><button n="0" value=""  class="b_button" ></td>
+          <td id="td_1"><button n="1" value=""  class="b_button"></td>
+          <td id="td_1"><button n="2" value=""  class="b_button"></td>
+        </tr>
+        <tr>
+          <td id="td_1"><button n="3" value=""  class="b_button"></td>
+          <td id="td_1"><button n="4" value=""  class="b_button"></td>
+          <td id="td_1"><button n="5" value=""  class="b_button"></td>
+        </tr>
+        <tr>
+          <td id="td_1"><button n="6" value=""  class="b_button"></td>
+          <td id="td_1"><button n="7" value=""  class="b_button"></td>
+          <td id="td_1"><button n="8" value=""  class="b_button"></td>
+        </tr>
+      </table>
+    </div>
 
+      </form>
     <!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <!-- use ajax to submit form, retreive the result and display on the page -->
     <script>
     $(document).ready(function() {
-      var form = $('form');
-      form.submit(function(e) {
-        var a = $("#a").val();
-        var b = $("#b").val();
-        $.ajax({
-          type: form.attr('method'),
-          url: form.attr('action'),
-          data: 'a=' + a + '&b=' + b
-        }).done(function(sum) {
-          $('#results').html(a + ' + ' + b + ' = ' + sum).attr('class', 'alert alert-success');
-        }).fail(function() {
-          $('#results').html('Villa kom upp við að leggja saman "' + a + ' + ' + b + '"').attr('class', 'alert alert-danger');
-        });
-        e.preventDefault();
+
+      var player = 1;
+
+      $( ".b_button" ).click(function() {
+        
+        if(player == 1){
+          x = 'x';
+          player = 2;
+        }
+        else
+        {
+          x = 'o';
+          player = 1;
+        }
+        //$( this ).attr(value, player)
+        $( this ).parent().html(x);
+        send($( this ).attr('n')); 
       });
     });
+
+      function send(i){
+
+              var val = i;
+              console.log  ("jallla:" + val);
+
+              $.ajax({
+                type: 'post',
+                url: '/add',
+                data: 'val=' + val
+              }).done(function(win) {
+                if (win = true)
+                $('#results').html('player' + player + ' wins!!!!!!').attr('class', 'alert alert-success');
+              }).fail(function() {
+                $('#results').html('Villa kom upp').attr('class', 'alert alert-danger');
+              });
+
+      }
+
     </script>
   </body>
 </html>

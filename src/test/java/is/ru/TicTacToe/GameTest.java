@@ -163,7 +163,7 @@ public class GameTest {
 	@Test
 	public void testOneTurn() {
 		int r = 0;
-		for (int i = 0; i < g.gameBoard.getDSQ(); i++) {
+		for (int i = 0; i < g.gameBoard.getDSQ() - 2; i++) {
 			r = g.oneTurn(i);
 		}
 		assertEquals(1, r);

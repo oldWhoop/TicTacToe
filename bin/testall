@@ -1,0 +1,3 @@
+echo -e '\033[0;37mTesting...'
+mvn clean verify -P all-tests
+echo -e '\033[00m'

@@ -11,5 +11,5 @@ deploy:
 addons:
   sauce_connect:
     username: dextroc
-    access_key: 49c6e8b6-acf6-4024-a3ff-f766fa7902e4
-      secure: B10QsRkvTqgZNg8xV4swbE2rT7Tk/ZJJeitK8nbfygRxuxyThz8Frc++Wj/GoX0/b0bFrKM0BpuUP+wZQd9KLEyuls1F6WGHZjZFDmjJGGDpSsybxE+TfqDSdTFyCXgCciKVLS5uVUB5RAVGasTu4eN1UJzNeyUkFl+lwPnMqU4=
+    access_key:
+    secure: OD2NTSZmVJSSQbCCBHHSszRt5Y/X885DbwAWM/HDEUFLKnC6oaOr3jP9eanSSBzaRtUkW7qLR6QfakiuG6AabA1bGgpXQC35AbI5pgDSK0cKUFuUIjWx2++hUhugGVOHQcDO1XXuFqWmWPtf+6guwUzxvmeoBVMlVxu8bEhLaBY=

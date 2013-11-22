@@ -79,11 +79,13 @@
            
            //$( this ).attr(value, player)
            selectedField.text(x);
-           selectedField.addClass('not-allowed');
+           selectedField.addClass('not-allowed').removeClass('board-field').off('click');
 
            send($( this ).attr('data-value')); 
          });
        });
+
+       function fill(){$( ".board-field" ).addClass('not-allowed').removeClass('board-field').off('click'); c}
 
          function send(i){
 
@@ -95,8 +97,9 @@
                    url: '/add',
                    data: 'val=' + val
                  }).done(function(win) {
-                   if (win != "")
+                   if (win != ""){
                    $('#results').html(win).attr('class', 'alert alert-success');
+                    fill();}
                  }).fail(function() {
                    $('#results').html('Villa kom upp').attr('class', 'alert alert-danger');
                  });

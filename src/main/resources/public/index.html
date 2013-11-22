@@ -15,9 +15,8 @@
     <div class="container">
       <h1>Spilaðu Tic Tac Toe!</h1>
 
-      <p>Spilari X byrjar</p>
+      <p id="next_player">Spilari X byrjar</p>
 
-      <form method="post" action="/add" class="form-inline" role="form">
         
 
           <div class="game-board clearfix center-block">
@@ -42,9 +41,12 @@
           
           </div>
 
-      </form>
       <hr>
       <div id="results">
+      </div>
+
+      <div >
+        <button id="new_game" type="button" class="btn-default" >Nýjan leik?</button>
       </div>
     </div>
 
@@ -56,41 +58,75 @@
        <script>
        $(document).ready(function() {
 
-         var player = 1;
+         new_game();
 
-         $( ".board-field" ).click(function() {
+       });
 
-           var x,
-               selectedField = $(this);
+       function fill(){
+        $( ".board-field" ).addClass('not-allowed').removeClass('board-field').off('click'); 
+        $("#new_game").css('display','block');
+      }
+
+
+       function new_game(){
+
+        var player = 1; 
+        $("#results").removeClass('alert alert-success').html(''); 
+        $("#new_game").css('display','none');
+        $( ".not-allowed" ).html('&nbsp;').addClass('board-field').removeClass('not-allowed').on('click'); 
+
+        $( ".board-field" ).click(function() {
+
+
+
+           var x, y ,selectedField = $(this);
+
+
 
            if (selectedField.text() != '×' && selectedField.text() != 'o' ) {
              if(player == 1){
                x = '×';
+               y = 'O';
                player = 2;
              }
              else
              {
                x = 'o';
+               y = 'X';
                player = 1;
              }
+
+            $("#next_player").html('Spilari ' + y + ' gerir næst');
             
            }
 
-           
            //$( this ).attr(value, player)
            selectedField.text(x);
            selectedField.addClass('not-allowed').removeClass('board-field').off('click');
 
            send($( this ).attr('data-value')); 
          });
-       });
 
-       function fill(){$( ".board-field" ).addClass('not-allowed').removeClass('board-field').off('click'); c}
+
+          $( "#new_game" ).click(function() {
+          new_game();
+          });
+
+                $.ajax({
+                   type: 'get',
+                   url: '/new',
+                   data: ''
+                 }).done(function(win) {
+                 }).fail(function() {
+                   $('#results').html('Villa kom upp').attr('class', 'alert alert-danger');
+                 });
+
+
+        }
 
          function send(i){
 
                  var val = i;
-                 console.log  ("jallla:" + val);
 
                  $.ajax({
                    type: 'post',

@@ -31,5 +31,13 @@ public class TicTacToe {
                 return ret;
             }
         });
+
+        get(new Route("/new") {
+            @Override
+            public Object handle(Request request, Response response) {
+                g.newRound();
+                return "true";
+            }
+        });
     }
 }

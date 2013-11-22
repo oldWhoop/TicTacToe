@@ -163,4 +163,9 @@ public class Game {
 	public int getWins(int playa) {
 		return playerWins[playa];
 	}
+
+	public void resetWins() {
+		playerWins[1] = 0;
+		playerWins[2] = 0;
+	}
 }

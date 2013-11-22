@@ -14,9 +14,15 @@
 
     <div class="container">
       <h1>Spilaðu Tic Tac Toe!</h1>
-
-      <p id="next_player">Spilari X byrjar</p>
-
+      <div>
+      <h3>Stig </h3>
+      <ul class="nav nav-pills">
+      <li>X: <span class="badge" id="score1"></span></li>
+      <li>O: <span class="badge" id="score2"></span></li>
+      </ul>
+      </div>
+      <p id="next_player"></p>
+      
         
 
           <div class="game-board clearfix center-block">
@@ -46,7 +52,7 @@
       </div>
 
       <div >
-        <button id="new_game" type="button" class="btn-default" >Nýjan leik?</button>
+        <button id="new_game" type="button" class="btn btn-default" >Spila aftur</button>
       </div>
     </div>
 
@@ -58,7 +64,7 @@
        <script>
        $(document).ready(function() {
 
-         new_game();
+         reset();
 
        });
 
@@ -70,7 +76,8 @@
 
        function new_game(){
 
-        var player = 1; 
+        var player = 1;
+        $("#next_player").html('Spilari X gerir fyrst'); 
         $("#results").removeClass('alert alert-success').html(''); 
         $("#new_game").css('display','none');
         $( ".not-allowed" ).html('&nbsp;').addClass('board-field').removeClass('not-allowed').on('click'); 
@@ -79,7 +86,7 @@
 
 
 
-           var x, y ,selectedField = $(this);
+           var x, y, tPl = player, selectedField = $(this);
 
 
 
@@ -104,7 +111,7 @@
            selectedField.text(x);
            selectedField.addClass('not-allowed').removeClass('board-field').off('click');
 
-           send($( this ).attr('data-value')); 
+           send($( this ).attr('data-value'), tPl); 
          });
 
 
@@ -124,7 +131,7 @@
 
         }
 
-         function send(i){
+         function send(i, p){
 
                  var val = i;
 
@@ -135,12 +142,35 @@
                  }).done(function(win) {
                    if (win != ""){
                    $('#results').html(win).attr('class', 'alert alert-success');
+                    score(p);
+                    $("#next_player").html('Leik lokið');
                     fill();}
                  }).fail(function() {
                    $('#results').html('Villa kom upp').attr('class', 'alert alert-danger');
                  });
 
          }
+
+         function score(p) {
+            $.ajax({
+                   type: 'post',
+                   url: '/score',
+                   data: 'val=' + p
+                 }).done(function(result) { 
+                      $( "#score" + p ).html(result);
+                  });
+               }
+          function reset() {
+            $.ajax({
+              type: 'post',
+              url: '/reset',
+              data: ''
+            }).done(function() {
+              new_game();
+              $("#score1").html('0');
+              $("#score2").html('0');
+            });
+          }
 
        </script>
   </body>

@@ -20,10 +20,8 @@ public class TicTacToe {
                 switch (result) {
                     case 1: 
                     case 2: ret = "Spilari " + result + " vann!!!";
-                    g.newRound();
                     break;
                     case 3: ret = "Jafntefli!";
-                    g.newRound();
                     break;
                     default:
                     break;
@@ -37,6 +35,22 @@ public class TicTacToe {
             public Object handle(Request request, Response response) {
                 g.newRound();
                 return "true";
+            }
+        });
+
+        post(new Route("/score") {
+            @Override
+            public Object handle(Request request, Response response) {
+                Integer val = Integer.valueOf(request.queryParams("val"));
+                return g.getWins(val);
+            }
+        });
+
+        post(new Route("/reset") {
+            @Override
+            public Object handle(Request request, Response response) {
+                g.resetWins();
+                return 1;
             }
         });
     }

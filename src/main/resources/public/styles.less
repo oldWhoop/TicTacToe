@@ -1,0 +1,41 @@
+@field-size: 50px;
+@margin: 10px;
+
+@dark: #000;
+@light: #fff;
+
+
+.game-board {
+  display: inline-block;
+  overflow: hidden;
+  width: 158px;
+}
+
+.board-field {
+  width: @field-size;
+  height: @field-size;
+  display: inline-block;
+  padding: 10px;
+  background-color: @light;
+  font-family: 'Futura', Arial, sans;
+  font-size: 3em;
+  line-height: 0.73;
+  text-indent: -1px;
+  cursor: pointer;
+
+    &.column0, &.column1 {
+        border-right: 2px @dark solid;
+    }
+
+}
+    .parent-row0, .parent-row1 {
+        border-bottom: 2px @dark solid;
+    }
+
+
+.xplayed {
+    content: "o";
+}
+
+.pointer         { cursor: pointer; }
+.not-allowed     { cursor: not-allowed; }

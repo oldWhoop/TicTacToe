@@ -95,8 +95,8 @@
                    url: '/add',
                    data: 'val=' + val
                  }).done(function(win) {
-                   if (win = true)
-                   $('#results').html('player' + player + ' wins!!!!!!').attr('class', 'alert alert-success');
+                   if (win != "")
+                   $('#results').html(win).attr('class', 'alert alert-success');
                  }).fail(function() {
                    $('#results').html('Villa kom upp').attr('class', 'alert alert-danger');
                  });

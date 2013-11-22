@@ -16,10 +16,11 @@ public class Game {
 	}
 
 	// Constructor, if we want to go crazy
+	/* // We don't use it now, only if we want to expand the game
 	public Game(int dimension) {
 		gameBoard = new Board(dimension);
 		playerWins = new int[] {0, 0, 0};
-	}
+	}*/
 
 	// Function that handles one turn
 	public int oneTurn(int n) {

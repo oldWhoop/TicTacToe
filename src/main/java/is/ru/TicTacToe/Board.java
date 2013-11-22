@@ -14,12 +14,13 @@ public class Board {
 		Arrays.fill(gameBoard, 0);
 	}
 	
+	/* // We're not going to use this constructor unless we expand the game
 	public Board(int dimension) {
 		gameBoard = new int[dimension*dimension];
 		dim = dimension;
 		dimsq = dim*dim;
 		Arrays.fill(gameBoard, 0);
-	}
+	}*/
 
 	public void clearBoard() {
 		for (int i = 0; i < gameBoard.length; i++) {

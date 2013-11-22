@@ -18,14 +18,14 @@ public class FirefoxTestTitleIT {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = System.getenv("STAGING_SERVER");
+    baseUrl = "http://tictacwhoop.cloudcontrolapp.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
   public void titleShouldBeHelloWorld() throws Exception {
     driver.get(baseUrl);
-    assertEquals("Hello world", driver.getTitle());
+    assertEquals("TicTacToe", driver.getTitle());
   }
 
   @After

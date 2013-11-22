@@ -19,10 +19,10 @@ public class TicTacToe {
                 String ret = "";
                 switch (result) {
                     case 1: 
-                    case 2: ret = "Player " + result + " won!!!";
+                    case 2: ret = "Spilari " + result + " vann!!!";
                     g.newRound();
                     break;
-                    case 3: ret = "Tie!";
+                    case 3: ret = "Jafntefli!";
                     g.newRound();
                     break;
                     default:

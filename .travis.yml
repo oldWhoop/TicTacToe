@@ -8,3 +8,8 @@ deploy:
   deployment: tictacwhoop/default
   on:
     repo: oldWhoop/TicTacToe
+addons:
+  sauce_connect:
+    username: dextroc
+    access_key:
+      secure: B10QsRkvTqgZNg8xV4swbE2rT7Tk/ZJJeitK8nbfygRxuxyThz8Frc++Wj/GoX0/b0bFrKM0BpuUP+wZQd9KLEyuls1F6WGHZjZFDmjJGGDpSsybxE+TfqDSdTFyCXgCciKVLS5uVUB5RAVGasTu4eN1UJzNeyUkFl+lwPnMqU4=

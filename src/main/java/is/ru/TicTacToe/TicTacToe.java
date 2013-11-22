@@ -53,5 +53,12 @@ public class TicTacToe {
                 return 1;
             }
         });
+
+        /*get(new Route("/loadStats") {
+            @Override
+            public Object handle(Request request, Response response) {
+                Integer i = Integer.valueOf(request.queryParams("val"));
+                return g.gameBoard.get(i);
+        });*/
     }
 }

@@ -21,23 +21,26 @@ public class Game {
 		playerWins = new int[] {0, 0, 0};
 	}
 
+	// Function that handles one turn
 	public int oneTurn(int n) {
 		int winner = 0;
 		if (mark(n)) {
 			// No need to check for winners unless there have been enough rounds
-			if(getRound() > (2*gameBoard.getDim()- 2)) {
-			winner = isWinner(n);
+			if(getRound() >= (2*gameBoard.getDim()- 2)) {
+				winner = isWinner(n);
 			}
-			nextRound();
+			if (winner == 0) nextRound();
+			else newRound();
 		}		
 		return winner;
 	}
 
+	// Gets current round - SUCCESSFULLY TESTED!
 	public int getRound() {
 		return round;
 	}
 
-	// New round, clears the board
+	// New round, clears the board - SUCCESSFULLY TESTED!
 	public void newRound() {
 		// TODO: implement winner of last round starts next
 		// then make a test for it.
@@ -46,7 +49,7 @@ public class Game {
 		gameBoard.clearBoard();
 	}
 
-	// Advance the game
+	// Advance the game - SUCCESSFULLY TESTED!
 	public void nextRound() {
 		round++;
 		if (round == gameBoard.getDSQ()) {

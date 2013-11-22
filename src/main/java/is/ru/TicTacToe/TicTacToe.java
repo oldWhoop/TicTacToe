@@ -15,8 +15,19 @@ public class TicTacToe {
             @Override
             public Object handle(Request request, Response response) {
                 Integer val = Integer.valueOf(request.queryParams("val"));
-                int ret = g.oneTurn(val);
-
+                int result = g.oneTurn(val);
+                String ret = "";
+                switch (result) {
+                    case 1: 
+                    case 2: ret = "Player " + result + " won!!!";
+                    g.newRound();
+                    break;
+                    case 3: ret = "Tie!";
+                    g.newRound();
+                    break;
+                    default:
+                    break;
+                }
                 return ret;
             }
         });

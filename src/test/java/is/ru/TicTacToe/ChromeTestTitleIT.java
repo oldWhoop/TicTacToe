@@ -39,7 +39,7 @@ public class ChromeTestTitleIT {
 
      @Before
      public void createDriver() {
-        baseUrl = System.getenv("STAGING_SERVER");//"http://hapworldtwo.herokuapp.com/";
+        baseUrl = "http://tictacwhoop.cloudcontrolapp.com/";
         driver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
      }
 
@@ -51,6 +51,6 @@ public class ChromeTestTitleIT {
      @Test
      public void testTitle() throws Exception {
       driver.get(baseUrl);
-      assertEquals("Hello world", driver.getTitle());
+      assertEquals("TicTacToe", driver.getTitle());
     }
 }

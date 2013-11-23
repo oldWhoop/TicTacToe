@@ -5,13 +5,24 @@ addons:
     username: johannj12
     access_key: f1bb82b1-19a6-4dc8-a40b-165bb170379e
 before_script:
-  deploy:
-    provider: cloudcontrol
-    email: sjohundrudogeinn@gmail.com
-    password:
-      secure: oRz1RAkgkmmFFFuCta/3drJeO3a740VwNcEExtHlgZptbqQQTc3MWJJoTifqkp0LCbA1a1ja+uM14xOMOXsl+J3YTpl+MZFs5c1SAnM7JITqfN0DicPepmYe3Re9uGVqHBDMxN1PQt/bijJ7cQcKi6VhoCWkIzYBou/xUYnwXfY=
-    deployment: tictacwhoop/default
-    on:
-      repo: oldWhoop/TicTacToe
-  after_deploy:
-  - mvn integration-test
+- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+- git remote add heroku git@heroku.com:tictacwhoop.git
+- echo "Host heroku.com" >> ~/.ssh/config
+- echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+- echo "   CheckHostIP no" >> ~/.ssh/config
+- echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+- heroku keys:clear
+- yes | heroku keys:add
+- yes | git push heroku master
+- mvn integration-test
+deploy:
+  provider: cloudcontrol
+  email: sjohundrudogeinn@gmail.com
+  password:
+    secure: oRz1RAkgkmmFFFuCta/3drJeO3a740VwNcEExtHlgZptbqQQTc3MWJJoTifqkp0LCbA1a1ja+uM14xOMOXsl+J3YTpl+MZFs5c1SAnM7JITqfN0DicPepmYe3Re9uGVqHBDMxN1PQt/bijJ7cQcKi6VhoCWkIzYBou/xUYnwXfY=
+  deployment: tictacwhoop/default
+  on:
+    repo: oldWhoop/TicTacToe
+env:
+  global:
+    secure: mMdqtqNqJP8F1TaYHUy1viLqboAZXutAYshmwH7Jb42Lu4Bbr1KSGvLUPeLnDUvCG/OUvzgY4nms4plEDjBPynkl+MLvCYdtEZeCFdi2JNtOsFMjDBJnCyx2aTRGySl5WPcrp1xcVcbCcqus3pM6QEuF+iqvlPrPhJ5HHQVGbB4=

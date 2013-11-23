@@ -1,40 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="TicTacToe : A game for everyone!" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>TicTacToe by oldWhoop</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>TicTacToe</title>
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/oldWhoop/TicTacToe">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/oldWhoop/TicTacToe/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/oldWhoop/TicTacToe/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/oldWhoop/TicTacToe">View on GitHub</a>
+    <div class="wrapper">
 
-          <h1 id="project_title">TicTacToe</h1>
-          <h2 id="project_tagline">A game for everyone!</h2>
+      <section>
+        <div id="title">
+          <h1>TicTacToe</h1>
+          <p>A game for everyone!</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/oldWhoop">oldWhoop</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/oldWhoop/TicTacToe/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/oldWhoop/TicTacToe/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
         <p><a href="https://travis-ci.org/oldWhoop/TicTacToe"><img src="https://travis-ci.org/oldWhoop/TicTacToe.png?branch=master" alt="Build Status"></a></p>
 
 <h1>
-<a name="tictactoe" class="anchor" href="#tictactoe"><span class="octicon octicon-link"></span></a>TicTacToe</h1>
+<a name="about-the-game" class="anchor" href="#about-the-game"><span class="octicon octicon-link"></span></a>About the game</h1>
 
 <p>This original game features two players who take turns marking their spot in nine fields. The first player to mark three fields down, across or diagonally, wins.</p>
 
@@ -43,51 +50,11 @@
 
 <p><a href="https://github.com/oldWhoop/TicTacToe">https://github.com/oldWhoop/TicTacToe</a></p>
 
-<h1>
-<a name="development-manual" class="anchor" href="#development-manual"><span class="octicon octicon-link"></span></a>Development Manual</h1>
-
-<p>What is needed and how to get the project to build on a fresh machine.</p>
-
-<h3>
-<a name="source-control-client-and-access-to-source-control" class="anchor" href="#source-control-client-and-access-to-source-control"><span class="octicon octicon-link"></span></a>Source control client and access to source control</h3>
-
-<p>The project is maintained in <a href="http://git-scm.com/">Git</a>, so if it is not installed on your machine, you must install it (on Ubuntu, use command <code>sudo apt-get install git-core</code>). </p>
-
-<p>The project is hosted on GitHub. Use command <code>git clone https://github.com/oldWhoop/TicTacToe.git</code> to download the latest source.</p>
-
-<h3>
-<a name="build-environment" class="anchor" href="#build-environment"><span class="octicon octicon-link"></span></a>Build environment</h3>
-
-<p>You will need to install the project on Ubuntu Linux or OS X. Windows is currently not supported.</p>
-
-<p>You will also need:</p>
-
-<ul>
-<li><a href="http://java.sun.com/">Java JDK 7</a></li>
-<li><a href="http://maven.apache.org/">Maven 4</a></li>
-</ul><p>Maven will handle installation of all other dependencies.</p>
-
-<h3>
-<a name="building-the-project" class="anchor" href="#building-the-project"><span class="octicon octicon-link"></span></a>Building the project</h3>
-
-<p>To build, <code>cd</code> into the project folder and run <code>bin/run</code>.</p>
-
-<h1>
-<a name="administration-manual" class="anchor" href="#administration-manual"><span class="octicon octicon-link"></span></a>Administration manual</h1>
-
-<p>How to deploy, run and maintain oldWhoop TicTacToe.</p>
+<p>For development and administration manuals, along with the design report, <a href="https://github.com/oldWhoop/TicTacToe/wiki">see the wiki</a>.</p>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">TicTacToe maintained by <a href="https://github.com/oldWhoop">oldWhoop</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>

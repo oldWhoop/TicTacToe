@@ -104,9 +104,11 @@ TicTacToeTest.java
 
 
 The delivery
-After writing and testing (using Maven) our java code. Build and integrate it using Travis. And futhermore connect our code to a html presentation using Spark, we use webdesign ( coding in html, css and jquery) to finalize the representaion of the game. 
+After writing and testing (using Maven and Junit) our java code. Build and integrate it using Travis. And futhermore connect our code to a html presentation using Spark, we use webdesign ( coding in html, css and jquery) to finalize the representaion of the game. 
 
 Our jquery code has a function that keeps a player from selecting a marked square.
 
 We perfomed Selenium tests on the game and discovered no bugs or errors.
+
+We used Saucelabs to test the game on other platforms (firefox, iphone etc.).
 

@@ -1,3 +1,0 @@
-echo -e '\033[0;37mDeploying...'
-git push heroku master
-echo -e '\033[00m'

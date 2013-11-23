@@ -7,7 +7,6 @@ import org.junit.Test;
 
 public class TicTacToeTest {
 
-
     @Test
     public void greetResultsInHello() {
         assertEquals(1, 1);

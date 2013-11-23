@@ -1,4 +1,9 @@
-echo -e '\033[0;37mRunning...'
-export PORT=4567
+echo -e '\033[00mSelect port (default=4567):'
+read PORT
+if [ !PORT ]; then 
+	PORT=4567
+fi
+export PORT
+echo -e '\033[1;35mRunning TicTacToe... (press Ctrl+C to exit)'
 java -jar target/TicTacToe-1.0-SNAPSHOT-jar-with-dependencies.jar
 echo -e '\033[00m'

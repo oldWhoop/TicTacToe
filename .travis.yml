@@ -2,8 +2,8 @@ language: java
 jdk: openjdk7
 addons:
   sauce_connect:
-    username: dextroc
-    access_key: 49c6e8b6-acf6-4024-a3ff-f766fa7902e4
+    username: johannj12
+    access_key: f1bb82b1-19a6-4dc8-a40b-165bb170379e
 deploy:
   provider: cloudcontrol
   email: sjohundrudogeinn@gmail.com

@@ -14,6 +14,7 @@ before_script:
 - heroku keys:clear
 - yes | heroku keys:add
 - yes | git push heroku master
+script:
 - mvn integration-test
 deploy:
   provider: cloudcontrol

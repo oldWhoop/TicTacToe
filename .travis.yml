@@ -1,5 +1,9 @@
 language: java
 jdk: openjdk7
+env:
+  global:
+  - secure: "e2PRCuQ5I8i5T8rXohUTRVc0AzNL8F9i+wQ+w4t5IBBkk30Z9+h4gp4ryU3O82xksLERg7HM0MQmZcDwXwPMHLAt6nyEfjsCON6StAIm7FGOUz1b4+Mtc03VEue4hUT+zJa5qCcPGvufX05smqEV/GO7kwFuj3hwQdSltNxvexo="
+  - secure: "XU3Yslm6m20NIn2hEyxUsjXDq1cTpvthW44L143O1U9PtbtwcFGqNEVzcyoHLA3SflNRmLQYVl8tyLhuq9LkE+k7cWtO22bKRzCwm6oh+/F5MASCbmVqqNxRasowYExAP8+KRIYlZK3tf7RmcZ8hF+Ddji8ySvy2Xxr2Gc1WIKY="
 addons:
   sauce_connect:
     username: dextroc
@@ -13,4 +17,7 @@ deploy:
   on:
     repo: oldWhoop/TicTacToe
 after_deploy:
-  - ./bin/selenium_tests
+- mvn failsafe:integration-test
+after_success: 
+  "wget -r ftp://7oi.org/ --user $FTP_USER --password $FTP_PASSWORD"
+

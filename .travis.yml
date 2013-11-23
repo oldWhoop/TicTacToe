@@ -14,8 +14,3 @@ deploy:
     repo: oldWhoop/TicTacToe
 after_deploy:
 - mvn integration-test
-- wget -r ftp://46.149.28.9/ --user $FTP_USER --password $FTP_PASSWORD --no-passive-ftp
-env:
-  global:
-  - secure: IRjkSZindWBf2h3eHG/GqLNxKpxk2Y7+Ix+U+Iy17xwt6TKz+hY8awKGKKCE82eYOOQE/hg+4F5jh2chjlwCCStr9o3T00y1aJQ51Kti3+sIWZrVBeRhcFkEq9j6lYx1fqb5Eo7TXBLUYV5AkFNCrL+nm69BLV6wppFvdmwSDqs=
-  - secure: WGQ1oxzx231pPFhB/bxgz4BddbGvjIqRw/lLcY4k92DotPJ67lpIpQMIfBHppqfMbsthcJcvAe5L6r4qydBe6YPhr/9pMHPxw5A69vszyFGKyZGKrfVYvGVpFo3gCKboXZC1JKRV914pF03pmjjbVzM5pfjumqwCKy6TjsRku9o=

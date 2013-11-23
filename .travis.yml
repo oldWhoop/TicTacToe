@@ -1,5 +1,9 @@
 language: java
 jdk: openjdk7
+addons:
+  sauce_connect:
+    username: dextroc
+    access_key: 49c6e8b6-acf6-4024-a3ff-f766fa7902e4
 deploy:
   provider: cloudcontrol
   email: sjohundrudogeinn@gmail.com
@@ -8,7 +12,5 @@ deploy:
   deployment: tictacwhoop/default
   on:
     repo: oldWhoop/TicTacToe
-addons:
-  sauce_connect:
-    username: dextroc
-    access_key: 49c6e8b6-acf6-4024-a3ff-f766fa7902e4
+after_deploy:
+  - ./bin/selenium_tests

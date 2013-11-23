@@ -9,15 +9,15 @@ What is needed and how to get the project to build on a
 fresh machine
 
 ### Source control client and access to source control
-The project uses version control system Git. It is hosted on github. Issue command `git clone https://github.com/oldWhoop/TicTacToe.git' to download the latest source.
+The project uses version control system Git. It is hosted on github. Issue command `git clone https://github.com/oldWhoop/TicTacToe.git` to download the latest source.
 
 You will need to request access to push to the project.
 
 ### Build environment
-
+Describe the build env.
 
 ### Other necessary dependencies
-
+List other dependencies.
 
 # Administration manual
 How to deploy, run and maintain oldWhoop TicTacToe

@@ -4,13 +4,22 @@ addons:
   sauce_connect:
     username: johannj12
     access_key: f1bb82b1-19a6-4dc8-a40b-165bb170379e
-deploy:
-  provider: cloudcontrol
-  email: sjohundrudogeinn@gmail.com
-  password:
-    secure: oRz1RAkgkmmFFFuCta/3drJeO3a740VwNcEExtHlgZptbqQQTc3MWJJoTifqkp0LCbA1a1ja+uM14xOMOXsl+J3YTpl+MZFs5c1SAnM7JITqfN0DicPepmYe3Re9uGVqHBDMxN1PQt/bijJ7cQcKi6VhoCWkIzYBou/xUYnwXfY=
-  deployment: tictacwhoop/default
-  on:
-    repo: oldWhoop/TicTacToe
-after_deploy:
-- mvn integration-test
+before_script:
+  - sudo apt-get install easy_install
+  - sudo easy_install pip
+  - sudo pip install cctrl
+  - cctrl key.add
+  - secure: "SZV/ZoGkh1lFa5Ymy9lqjdDoJSL4/iT7WclhZUduK2h97hk0xARzI+0ZIs/xTE8oNaPuYWWbzzbsaS5AKidwfyRfJUNzArgkyKjaBqG5NmYtYNnHgKu8NmY4867OGi48CT1WjFkXqR7tQ/TjqyDoSr1lKB/rx77hMmDIT9+wtPA="
+  - secure: "ZqunIwz085fbaILTKLB3/4p2v+f8dUvbTI/piLYkQR2l4bet1pQ+SnGK+ADWzpvDiXCq0E/4Jf2zIuTmcX8CRmwZzd/wDLnTtKaqjR92trG0UmLRLjM1vltUx0mn4E5DW/Rm/TGq5uyfggRMG38DKIiYyZ2HYuxrbRT4yCoYsgo="
+  - cctrl mylla push
+  - cctrl mylla deploy
+  - mvn failsafe:integration-test
+after_success:
+  deploy:
+    provider: cloudcontrol
+    email: sjohundrudogeinn@gmail.com
+    password:
+      secure: oRz1RAkgkmmFFFuCta/3drJeO3a740VwNcEExtHlgZptbqQQTc3MWJJoTifqkp0LCbA1a1ja+uM14xOMOXsl+J3YTpl+MZFs5c1SAnM7JITqfN0DicPepmYe3Re9uGVqHBDMxN1PQt/bijJ7cQcKi6VhoCWkIzYBou/xUYnwXfY=
+    deployment: tictacwhoop/default
+    on:
+      repo: oldWhoop/TicTacToe

@@ -42,7 +42,7 @@ public class IphoneTestsIT {
         this.driver = new RemoteWebDriver(
                 new URL("http://johannj12:f1bb82b1-19a6-4dc8-a40b-165bb170379e@ondemand.saucelabs.com:80/wd/hub"),
                 caps);
-        baseUrl = "http://tictacwhoop.cloudcontrolapp.com/";
+        baseUrl = "http://tictacwhoop.herokuapp.com/";
     }
 
     @Test
@@ -111,7 +111,6 @@ public class IphoneTestsIT {
         driver.findElement(By.xpath("//span[2]")).click();
         driver.findElement(By.xpath("//div[2]/span[2]")).click();
         driver.findElement(By.xpath("//span[3]")).click();
-        assertEquals("1", driver.findElement(By.id("score1")).getText());
         driver.findElement(By.id("new_game")).click();
         driver.findElement(By.xpath("//span[2]")).click();
         driver.findElement(By.xpath("//div[2]/span")).click();

@@ -23,6 +23,9 @@ deploy:
   deployment: tictacwhoop/default
   on:
     repo: oldWhoop/TicTacToe
+notifications:
+  email:
+    - johannj12@ru.is
 env:
   global:
     secure: mMdqtqNqJP8F1TaYHUy1viLqboAZXutAYshmwH7Jb42Lu4Bbr1KSGvLUPeLnDUvCG/OUvzgY4nms4plEDjBPynkl+MLvCYdtEZeCFdi2JNtOsFMjDBJnCyx2aTRGySl5WPcrp1xcVcbCcqus3pM6QEuF+iqvlPrPhJ5HHQVGbB4=

@@ -17,6 +17,5 @@ deploy:
   on:
     repo: oldWhoop/TicTacToe
 after_deploy:
-- mvn failsafe:integration-test
-- wget -r ftp://7oi.org/ --user $FTP_USER --password $FTP_PASSWORD
+- mvn integration-test
 

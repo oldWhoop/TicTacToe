@@ -1,6 +1,5 @@
 package is.ru.TicTacToe;
-//import java.util.Arrays;
-import java.lang.Math;
+
 
 public class Game {
 
@@ -77,7 +76,7 @@ public class Game {
 
 	// Finds any winning situation - SUCCESSFULLY TESTED!
 	public int isWinner(int n) {
-		int result = 0;
+
 		if (horizontalWin(n) || verticalWin(n) || diagonalWin(n)) {
 			return player;
 		}

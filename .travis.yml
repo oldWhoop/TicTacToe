@@ -9,11 +9,11 @@ before_script:
   - python ez_setup.py --user
   - sudo easy_install pip
   - sudo pip install cctrl
-  - cctrl key.add
+  - cctrluser key.add
   - secure: "SZV/ZoGkh1lFa5Ymy9lqjdDoJSL4/iT7WclhZUduK2h97hk0xARzI+0ZIs/xTE8oNaPuYWWbzzbsaS5AKidwfyRfJUNzArgkyKjaBqG5NmYtYNnHgKu8NmY4867OGi48CT1WjFkXqR7tQ/TjqyDoSr1lKB/rx77hMmDIT9+wtPA="
   - secure: "ZqunIwz085fbaILTKLB3/4p2v+f8dUvbTI/piLYkQR2l4bet1pQ+SnGK+ADWzpvDiXCq0E/4Jf2zIuTmcX8CRmwZzd/wDLnTtKaqjR92trG0UmLRLjM1vltUx0mn4E5DW/Rm/TGq5uyfggRMG38DKIiYyZ2HYuxrbRT4yCoYsgo="
-  - cctrl mylla push
-  - cctrl mylla deploy
+  - cctrlapp mylla push
+  - cctrlapp mylla deploy
   - mvn failsafe:integration-test
 after_success:
   deploy:

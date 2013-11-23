@@ -6,4 +6,8 @@ This original game features two players who take turns marking their spot in nin
 # Project URL
 https://github.com/oldWhoop/TicTacToe
 
+# Project binaries
+A downloadable binary is available at
+https://github.com/oldWhoop/TicTacToe/releases/download/v.0.1.1/tictactoe.zip
+
 For development and administration manuals, along with the design report, [see the wiki](https://github.com/oldWhoop/TicTacToe/wiki).

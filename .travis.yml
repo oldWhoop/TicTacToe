@@ -5,8 +5,8 @@ addons:
     username: johannj12
     access_key: f1bb82b1-19a6-4dc8-a40b-165bb170379e
 before_script:
-  - sudo apt-get install python
-  - sudo wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | python
+  - sudo wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
+  - python ez_setup.py --user
   - sudo easy_install pip
   - sudo pip install cctrl
   - cctrl key.add

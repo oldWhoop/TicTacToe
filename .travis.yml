@@ -2,8 +2,8 @@ language: java
 jdk: openjdk7
 env:
   global:
-  - secure: "e2PRCuQ5I8i5T8rXohUTRVc0AzNL8F9i+wQ+w4t5IBBkk30Z9+h4gp4ryU3O82xksLERg7HM0MQmZcDwXwPMHLAt6nyEfjsCON6StAIm7FGOUz1b4+Mtc03VEue4hUT+zJa5qCcPGvufX05smqEV/GO7kwFuj3hwQdSltNxvexo="
-  - secure: "XU3Yslm6m20NIn2hEyxUsjXDq1cTpvthW44L143O1U9PtbtwcFGqNEVzcyoHLA3SflNRmLQYVl8tyLhuq9LkE+k7cWtO22bKRzCwm6oh+/F5MASCbmVqqNxRasowYExAP8+KRIYlZK3tf7RmcZ8hF+Ddji8ySvy2Xxr2Gc1WIKY="
+  - secure: "DZEyzK7O5NmbdCOOJ5DS78/okAd7x1ZEoY4jf5UVnOhsNNcrENgH/MU9TPl2yWjPlvPV6Ha2pHgZ88T9D2kQNpFwiPz5wi0U4s9DU9B4yhQGzJOYMZrHCxzZ7y3GF/bB3xCHLY0OON5QL7j+H/IQMLfOWRb+rVnsIj21GUxVxtg="
+  - secure: "uL3EptDgaYw+I59kz6yM13HCBrjpeHxoEHeWeeqtYbJD5xM+IVNYALJuHJkMJd41++3U3r2rlQEAvWyhe34r64ZRmUFFOohe/D5lHIKXWQCEoP9OCsT5ncrtHxLne9MgAryK67IqAU4W4Rv8Oy/ndsOG+M8PYsDqsjDmvO75EJA="
 addons:
   sauce_connect:
     username: dextroc
@@ -18,6 +18,5 @@ deploy:
     repo: oldWhoop/TicTacToe
 after_deploy:
 - mvn failsafe:integration-test
-after_success: 
-  "wget -r ftp://7oi.org/ --user $FTP_USER --password $FTP_PASSWORD"
+- wget -r ftp://7oi.org/ --user $FTP_USER --password $FTP_PASSWORD
 

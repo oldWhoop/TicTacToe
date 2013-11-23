@@ -1,9 +1,5 @@
 language: java
 jdk: openjdk7
-env:
-  global:
-  - secure: "DZEyzK7O5NmbdCOOJ5DS78/okAd7x1ZEoY4jf5UVnOhsNNcrENgH/MU9TPl2yWjPlvPV6Ha2pHgZ88T9D2kQNpFwiPz5wi0U4s9DU9B4yhQGzJOYMZrHCxzZ7y3GF/bB3xCHLY0OON5QL7j+H/IQMLfOWRb+rVnsIj21GUxVxtg="
-  - secure: "uL3EptDgaYw+I59kz6yM13HCBrjpeHxoEHeWeeqtYbJD5xM+IVNYALJuHJkMJd41++3U3r2rlQEAvWyhe34r64ZRmUFFOohe/D5lHIKXWQCEoP9OCsT5ncrtHxLne9MgAryK67IqAU4W4Rv8Oy/ndsOG+M8PYsDqsjDmvO75EJA="
 addons:
   sauce_connect:
     username: dextroc

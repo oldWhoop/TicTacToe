@@ -39,7 +39,7 @@ public class ChromeTestsIT {
         caps.setCapability("version", "30");
         // Create the connection to Sauce Labs to run the tests
         this.driver = new RemoteWebDriver(
-                new URL("http://dextroc:49c6e8b6-acf6-4024-a3ff-f766fa7902e4@ondemand.saucelabs.com:80/wd/hub"),
+                new URL("http://johannj12:f1bb82b1-19a6-4dc8-a40b-165bb170379e@ondemand.saucelabs.com:80/wd/hub"),
                 caps);
         baseUrl = "http://tictacwhoop.cloudcontrolapp.com/";
     }

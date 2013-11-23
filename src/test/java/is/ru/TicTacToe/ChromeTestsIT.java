@@ -48,7 +48,7 @@ public class ChromeTestsIT {
     public void checkTitle() throws Exception {
         // Make the browser get the page and check its title
         driver.get(baseUrl);
-        assertEquals("TicTacToe", driver.getTitle());
+        assertEquals("Mylla", driver.getTitle());
     }
 
     @Test

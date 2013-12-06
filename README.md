@@ -11,3 +11,6 @@ A downloadable binary is available at
 https://github.com/oldWhoop/TicTacToe/releases/download/v.0.1.1/tictactoe.zip
 
 For development and administration manuals, along with the design report, [see the wiki](https://github.com/oldWhoop/TicTacToe/wiki).
+
+* * * * * * *
+This is a great game!
